@@ -3,6 +3,7 @@ package com.example.firenotes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,7 +51,7 @@ public class UserNotesInputActivity extends AppCompatActivity {
                     }
                     else {
                         Toast.makeText(UserNotesInputActivity.this, "Notes saved!", Toast.LENGTH_SHORT).show();
-                        handler.notify();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     }
                 }
             }

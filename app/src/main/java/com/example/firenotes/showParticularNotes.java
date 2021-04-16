@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -51,9 +52,7 @@ public class showParticularNotes extends AppCompatActivity {
             public void onClick(View v) {
                 DBHandler handler = new DBHandler(getApplicationContext());
                 handler.deleteNote(id);
-//                handler.notify();
-
-                    finish();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
 
@@ -67,8 +66,7 @@ public class showParticularNotes extends AppCompatActivity {
 
                 DBHandler handler = new DBHandler(getApplicationContext());
                 handler.updateNote(model);
-//                handler.notify();
-                finish();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
 

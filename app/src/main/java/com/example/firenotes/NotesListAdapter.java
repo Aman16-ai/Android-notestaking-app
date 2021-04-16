@@ -46,6 +46,7 @@ public class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.Note
                 db = new DBHandler(context);
                 db.deleteNote(model.getId());
                 Toast.makeText(context, "Deleting item with title "+holder.title.getText(), Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context,MainActivity.class));
             }
         });
 

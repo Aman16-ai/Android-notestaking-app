@@ -32,30 +32,16 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-//        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                NavHostFragment.findNavController(FirstFragment.this)
-////                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
-
-
-
         DBHandler handler = new DBHandler(getContext());
         List<NotesModel> list;
         list = handler.ReadNotes();
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(gridLayoutManager);
         NotesListAdapter adapter = new NotesListAdapter(getContext(),list);
         recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
-//        adapter.notifyAll();
 
 
 

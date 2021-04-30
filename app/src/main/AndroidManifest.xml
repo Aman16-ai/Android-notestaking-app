@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FireNotes">
+        <activity android:name=".UserPasswordGenerator"></activity>
+        <activity
+            android:name=".PasswordManager"
+            android:label="@string/title_activity_password_manager"
+            android:theme="@style/Theme.FireNotes.NoActionBar" />
         <activity android:name=".ChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".showParticularNotes"
@@ -26,8 +30,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.FireNotes.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.FireNotes.NoActionBar" />
     </application>
 
 </manifest>

@@ -22,5 +22,11 @@ public class ChooserActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+        passGenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),PasswordManager.class));
+            }
+        });
     }
 }

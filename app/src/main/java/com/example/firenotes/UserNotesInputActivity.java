@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.LocalDateTime;
 
@@ -18,7 +20,7 @@ public class UserNotesInputActivity extends AppCompatActivity {
 
     EditText et_title;
     EditText et_body;
-    Button  btn_save;
+    FloatingActionButton btn_save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class UserNotesInputActivity extends AppCompatActivity {
         actionBar.setLogo(R.drawable.notes_logo_layout);
         et_title = (EditText)findViewById(R.id.input_title);
         et_body = (EditText)findViewById(R.id.input_body);
-        btn_save = (Button)findViewById(R.id.input_save_btn);
+        btn_save = (FloatingActionButton) findViewById(R.id.input_save_btn);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override

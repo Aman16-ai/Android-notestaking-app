@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FireNotes">
-        <activity android:name=".UserPasswordGenerator"></activity>
-        <activity
-            android:name=".PasswordManager"
-            android:label="@string/title_activity_password_manager"
-            android:theme="@style/Theme.FireNotes.NoActionBar" />
+        <activity android:name=".LoginPassGen"></activity>
+        <activity android:name=".SetPassword" />
+        <activity android:name=".UpdatePassword" />
+        <activity android:name=".PassGenManager" />
+        <activity android:name=".UserPasswordGenerator" />
         <activity android:name=".ChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -50,9 +50,24 @@ public class showParticularNotes extends AppCompatActivity {
         delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHandler handler = new DBHandler(getApplicationContext());
-                handler.deleteNote(id);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(showParticularNotes.this);
+                builder.setTitle("Do you want to delete ?");
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DBHandler handler = new DBHandler(getApplicationContext());
+                        handler.deleteNote(id);
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 
@@ -64,9 +79,22 @@ public class showParticularNotes extends AppCompatActivity {
                 model.setTitle(title_tv.getText().toString());
                 model.setBody(body_tv.getText().toString());
 
-                DBHandler handler = new DBHandler(getApplicationContext());
-                handler.updateNote(model);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(showParticularNotes.this);
+                builder.setTitle("Do you want to update ?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DBHandler handler = new DBHandler(getApplicationContext());
+                        handler.updateNote(model);
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
             }
         });
 

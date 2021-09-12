@@ -45,6 +45,16 @@
         app:layout_constraintRight_toRightOf="parent"
        />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cameraBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F86B70"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_baseline_camera_alt_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/input_save_btn"
+        android:layout_marginRight="20dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
